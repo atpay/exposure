@@ -7,6 +7,10 @@ module Exposure
             table_name
         end
 
+        def primary_key
+          @primary_key ||= superclass.primary_key
+        end
+
         protected
         def class_of_active_record_descendant(klass, direct=true)
           if direct

@@ -12,6 +12,11 @@ class ExposureTest < ActiveSupport::TestCase
     end
   end
 
+  def test_primary_key
+    assert_equal "uuid", Product.primary_key
+    assert_equal SimpleProduct.primary_key, Product.primary_key
+  end
+
   def test_table_name
     assert_equal "users", SimpleSignup.table_name
   end
