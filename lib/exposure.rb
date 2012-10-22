@@ -11,6 +11,10 @@ module Exposure
           @primary_key ||= superclass.primary_key
         end
 
+        def descends_from_active_record?
+          true
+        end
+
         protected
         def class_of_active_record_descendant(klass, direct=true)
           if direct
@@ -20,9 +24,6 @@ module Exposure
           end
         end
 
-        def descends_from_active_record?
-          true
-        end
       end
     end
   end
